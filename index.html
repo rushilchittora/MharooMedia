@@ -59,13 +59,16 @@
   <!-- 🖼️ Our Work Section -->
   <section id="ourwork" class="our-work" data-aos="fade-up">
     <h2>Our Work</h2>
-    <div class="work-gallery">
-      <img src="assets/work1.jpeg" alt="Work Sample 1" />
-      <img src="assets/work2.jpg" alt="Work Sample 2" />
-      <img src="assets/work3.jpg" alt="Work Sample 3" />
-      <img src="assets/work4.jpg" alt="Work Sample 4" />
-      <!-- Add more as needed -->
-    </div>
+    <div class="work-wrapper">
+        <button class="scroll-btn scroll-left">&#10094;</button>
+        <div class="work-gallery">
+          <img src="assets/work1.jpeg" alt="Work Sample 1" />
+          <img src="assets/work2.jpg" alt="Work Sample 2" />
+          <img src="assets/work1.jpeg" alt="Work Sample 3" />
+          <img src="assets/work2.jpg" alt="Work Sample 4" />
+        </div>
+        <button class="scroll-btn scroll-right">&#10095;</button>
+      </div>
   </section>
 
   <section id="contact" class="contact" data-aos="fade-up">
@@ -82,6 +85,13 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
+    const gallery = document.querySelector(".work-gallery");
+    document.querySelector(".scroll-left").addEventListener("click", () => {
+      gallery.scrollBy({left: -300, behavior: "smooth"});
+    });
+    document.querySelector(".scroll-right").addEventListener("click", () => {
+      gallery.scrollBy({left: 300, behavior: "smooth"});
+    });
 </script>
 </body>
 </html>
