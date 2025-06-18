@@ -1,0 +1,236 @@
+/* Fonts & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fdf7ef;
+  color: #2b1c0f;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #fff4e3;
+  align-items: center;
+}
+
+.navbar .logo {
+  height: 50px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a:hover {
+  color: #b73e3e;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('assets/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #b73e3e;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #8d2a2a;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  background: #ffe5c1;
+  margin: 10px 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background: #e1c9a1;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+/* Header Top */
+.header-top {
+  background: #fff4e3;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 40px;
+  font-size: 0.9rem;
+  color: #5a3b1d;
+}
+
+.social-links a {
+  margin-left: 15px;
+  color: #b73e3e;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Our Work Section */
+.our-work {
+  background: #fdf1db;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.our-work h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+
+.work-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.work-gallery img {
+  height: 250px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.work-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Keyframes for Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 👇 Animate Navbar on Load */
+.navbar {
+  animation: fadeDown 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* 👇 Animate Hero Section */
+.hero h1,
+.hero p,
+.hero .cta-btn {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero h1 {
+  animation-delay: 0.3s;
+}
+.hero p {
+  animation-delay: 0.6s;
+}
+.hero .cta-btn {
+  animation-delay: 0.9s;
+}
+
+/* 👇 Animate Sections on Load */
+.about,
+.services,
+.contact,
+.our-work {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* 👇 Add zoom effect to Work Images */
+.work-gallery img {
+  animation: zoomIn 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+.work-gallery img:nth-child(1) { animation-delay: 0.3s; }
+.work-gallery img:nth-child(2) { animation-delay: 0.5s; }
+.work-gallery img:nth-child(3) { animation-delay: 0.7s; }
+.work-gallery img:nth-child(4) { animation-delay: 0.9s; }
